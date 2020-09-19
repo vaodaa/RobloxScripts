@@ -41,5 +41,22 @@ local ohTable2 = {
 }
 
 workspace.CommunicationRelays.Transaction.BuyItem:InvokeServer(ohString1, ohTable2)
+
+local ohString1 = "Food"
+local ohTable2 = {
+	["Name"] = "Vanilla Ice Cream Cone",
+	["Shop"] = "Ice Cream"
+}
+
+workspace.CommunicationRelays.Transaction.BuyItem:InvokeServer(ohString1, ohTable2)
+
+local ohString1 = "Food"
+local ohTable2 = {
+	["Name"] = "Chocolate Ice Cream Cone",
+	["Shop"] = "Ice Cream"
+}
+
+workspace.CommunicationRelays.Transaction.BuyItem:InvokeServer(ohString1, ohTable2)
+
 purchases.Value += 1
 until purchases.Value == 50
