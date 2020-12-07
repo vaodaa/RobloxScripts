@@ -1,0 +1,77 @@
+local UIS = game:GetService("UserInputService")
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Container.List.Food:GetChildren()) do
+	if v:IsA("UIGridLayout") then
+	else
+		v:Destroy()
+	end
+
+end
+
+local function createfood(ImageId, FoodNamed)
+	local FoodName = Instance.new("ImageButton")
+	local Selection = Instance.new("ImageLabel")
+	local ImageLabel = Instance.new("ImageLabel")
+
+	FoodName.Name = FoodNamed
+	FoodName.Parent = game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Container.List.Food
+	FoodName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	FoodName.BackgroundTransparency = 1.000
+	FoodName.Size = UDim2.new(0, 100, 0, 100)
+	FoodName.Image = "rbxassetid://4315969795"
+	FoodName.ImageColor3 = Color3.fromRGB(184, 224, 255)
+	FoodName.ScaleType = Enum.ScaleType.Slice
+	FoodName.SliceCenter = Rect.new(30, 30, 170, 170)
+
+	ImageLabel.Parent = FoodName
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.Position = UDim2.new(0.0333333351, 0, 0.055555556, 0)
+	ImageLabel.Size = UDim2.new(0, 83, 0, 80)
+	ImageLabel.Image = ImageId
+	ImageLabel.ScaleType = Enum.ScaleType.Slice
+end
+
+for i,v in pairs(game.ReplicatedStorage.Food:GetChildren()) do
+	createfood(v.Image, v.Name)
+end
+
+game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Container.List.Food.CanvasSize = UDim2.new(0, 0, 0, 1135)
+
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Container.List.Food:GetChildren()) do
+	if v:IsA("UIGridLayout") then
+	else
+		v.MouseButton1Click:Connect(function()
+			workspace.CommunicationRelays.Character.EquipHeldItem:FireServer(v.Name)
+			game:GetService("Players").LocalPlayer.PlayerGui.Notifications.ItemPrompts.Visible = true
+			wait(0.5)
+			local P1 = game:GetService("Players").LocalPlayer.PlayerGui.Notifications.ItemPrompts.PromptBar
+			P1.Visible = true
+			P1.Key.KeyCode.Text = "Q/E"
+			P1.Key.KeyCode.TextScaled = true
+			P1.Action.Text = "Eat/Put Away"
+			P1.Action.Shadow.Text = "Eat/Put Away"
+		end)
+	end
+end
+
+UIS.InputBegan:Connect(function(key)
+	if key.KeyCode == Enum.KeyCode.Q then
+		game:GetService("Players").LocalPlayer.PlayerGui.Notifications.ItemPrompts.Visible = false
+		game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game:GetService("ReplicatedStorage").Animations.Eating):Play()
+		game:GetService("Players").LocalPlayer.PlayerGui.SoundGroup.Eating:Play()
+		wait(2)
+		if game:GetService("Players").LocalPlayer.PlayerGui.SoundGroup.Eating.Playing == false then
+			workspace.CommunicationRelays.Character.RemoveHeldItem:FireServer()
+		end
+	end
+end)
+
+UIS.InputBegan:Connect(function(key)
+	if key.KeyCode == Enum.KeyCode.E then
+		workspace.CommunicationRelays.Character.RemoveHeldItem:FireServer()
+		game:GetService("Players").LocalPlayer.PlayerGui.Notifications.ItemPrompts.Visible = false
+	end
+end)
+
