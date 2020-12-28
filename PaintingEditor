@@ -1,0 +1,247 @@
+if game.PlaceId == 137877687 then
+	local loading = true
+	while loading == true do
+		wait()
+		if game:IsLoaded() then
+			loading = false
+		end
+		wait()
+	end
+	local PGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	if PGui:FindFirstChild("LoadScreen") then
+		repeat wait() until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadScreen") 
+	end
+	local ToyShop = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Close = Instance.new("Frame")
+	local Done = Instance.new("ImageButton")
+	local Icon = Instance.new("ImageLabel")
+	local Shadow = Instance.new("ImageLabel")
+	local Main_2 = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local TextBox = Instance.new("TextBox")
+	local UICorner_3 = Instance.new("UICorner")
+	local ScrollingFrame = Instance.new("ScrollingFrame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local UICorner_4 = Instance.new("UICorner")
+	local TextButton_2 = Instance.new("TextButton")
+	local UICorner_5 = Instance.new("UICorner")
+	local TextButton_3 = Instance.new("TextButton")
+	local UICorner_6 = Instance.new("UICorner")
+	local TextButton_4 = Instance.new("TextButton")
+	local UICorner_7 = Instance.new("UICorner")
+	local TextButton_5 = Instance.new("TextButton")
+	local UICorner_8 = Instance.new("UICorner")
+	local TextButton_6 = Instance.new("TextButton")
+	local UICorner_9 = Instance.new("UICorner")
+	local TextButton_7 = Instance.new("TextButton")
+	local UICorner_10 = Instance.new("UICorner")
+	local TextButton_8 = Instance.new("TextButton")
+	local UICorner_11 = Instance.new("UICorner")
+	local TextButton_9 = Instance.new("TextButton")
+	local UICorner_12 = Instance.new("UICorner")
+	local TextButton_10 = Instance.new("TextButton")
+	local UICorner_13 = Instance.new("UICorner")
+	
+	ToyShop.Name = "ToyShop2"
+	ToyShop.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ToyShop.ResetOnSpawn = false
+	ToyShop.Enabled = false
+
+	Main.Name = "Main"
+	Main.Parent = ToyShop
+	Main.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	Main.Position = UDim2.new(0.269196391, 0, 0.0755563378, 0)
+	Main.Size = UDim2.new(0.460439116, 0, 0.848542273, 0)
+
+	UICorner.CornerRadius = UDim.new(0, 30)
+	UICorner.Parent = Main
+
+	Close.Name = "Close"
+	Close.Parent = Main
+	Close.AnchorPoint = Vector2.new(0, 1)
+	Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Close.BackgroundTransparency = 1.000
+	Close.Position = UDim2.new(0.962206841, 0, 0.0680175945, 0)
+	Close.Size = UDim2.new(0.0796679705, 0, 0.0934573486, 0)
+	Close.ZIndex = 3
+
+	Done.Name = "Done"
+	Done.Parent = Close
+	Done.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Done.BackgroundTransparency = 1.000
+	Done.Position = UDim2.new(-0.300000161, 0, 0.0999998674, 0)
+	Done.Size = UDim2.new(1.02010167, 0, 1, 0)
+	Done.ZIndex = 2
+	Done.Image = "rbxassetid://2473576382"
+	Done.ImageColor3 = Color3.fromRGB(221, 64, 74)
+	Done.ScaleType = Enum.ScaleType.Slice
+	Done.MouseButton1Click:Connect(function()
+		ToyShop.Enabled = false
+	end)
+
+	Icon.Name = "Icon"
+	Icon.Parent = Done
+	Icon.AnchorPoint = Vector2.new(0.5, 0.5)
+	Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Icon.BackgroundTransparency = 1.000
+	Icon.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Icon.Size = UDim2.new(0.5, 0, 0.5, 0)
+	Icon.ZIndex = 5
+	Icon.Image = "rbxassetid://4487218968"
+	Icon.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Icon.ImageTransparency = 0.400
+
+	Shadow.Name = "Shadow"
+	Shadow.Parent = Close
+	Shadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Shadow.BackgroundTransparency = 1.000
+	Shadow.Position = UDim2.new(-0.274498016, 0, 0.125000119, 0)
+	Shadow.Size = UDim2.new(1.02010167, 0, 1, 0)
+	Shadow.Image = "rbxassetid://2473576382"
+	Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Shadow.ImageTransparency = 0.500
+	Shadow.ScaleType = Enum.ScaleType.Slice
+
+	Main_2.Name = "Main"
+	Main_2.Parent = Main
+	Main_2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Main_2.Position = UDim2.new(0.0258877873, 0, 0.0204271898, 0)
+	Main_2.Size = UDim2.new(0.958432078, 0, 0.959147453, 0)
+
+	UICorner_2.CornerRadius = UDim.new(0, 30)
+	UICorner_2.Parent = Main_2
+
+	TextBox.Parent = Main_2
+	TextBox.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	TextBox.Position = UDim2.new(0.048975911, 0, 0.0578255653, 0)
+	TextBox.Size = UDim2.new(0.905134857, 0, 0.13142176, 0)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.PlaceholderText = "Image ID"
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.TextScaled = true
+	TextBox.TextSize = 14.000
+	TextBox.TextWrapped = true
+
+	UICorner_3.Parent = TextBox
+
+	ScrollingFrame.Parent = Main_2
+	ScrollingFrame.Active = true
+	ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ScrollingFrame.BackgroundTransparency = 1.000
+	ScrollingFrame.BorderSizePixel = 0
+	ScrollingFrame.Position = UDim2.new(0.0469423272, 0, 0.221490011, 0)
+	ScrollingFrame.Size = UDim2.new(0.95164901, 0, 0.715762496, 0)
+	ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+	ScrollingFrame.ScrollBarThickness = 6
+
+	UIListLayout.Parent = ScrollingFrame
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Padding = UDim.new(0, 1)
+
+	local Paintings = 0
+	local function addcanvaseditoroption(instance)
+		local TextButton = Instance.new("TextButton")
+		TextButton.Parent = ScrollingFrame
+		TextButton.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+		TextButton.Position = UDim2.new(0, 0, -1.02620137, 0)
+		TextButton.Size = UDim2.new(0.97299999, 0, 0.0930019692, 0)
+		TextButton.Font = Enum.Font.GothamSemibold
+		Paintings += 1
+		TextButton.Text = "Painting"..tostring(Paintings)
+		TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton.TextScaled = true
+		TextButton.TextSize = 14.000
+		TextButton.TextWrapped = true
+		UICorner_4.Parent = TextButton
+
+		TextButton.MouseButton1Click:Connect(function()
+			if instance.Parent.Canvas:FindFirstChild("Image") then
+				instance.Parent.Canvas["Image"].Texture = "http://www.roblox.com/asset/?id="..tonumber(TextBox.Text)
+			elseif instance.Parent.Canvas:FindFirstChild("FrontFace") then
+				instance.Parent.Canvas.FrontFace.Frame.ImageLabel.Image = "http://www.roblox.com/asset/?id="..tonumber(TextBox.Text)
+			end
+		end)
+	end
+
+
+	local RoAdmin = Instance.new("ImageButton")
+	local Icon = Instance.new("ImageLabel")
+	local UIGradient = Instance.new("UIGradient")
+	local Shadow = Instance.new("ImageLabel")
+
+	RoAdmin.Name = "RoAdmin"
+	RoAdmin.Parent = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.MetaFrame.Apps1
+	RoAdmin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	RoAdmin.BackgroundTransparency = 1.000
+	RoAdmin.BorderSizePixel = 0
+	RoAdmin.LayoutOrder = 2
+	RoAdmin.Position = UDim2.new(0.779610395, 0, 0.837165833, 0)
+	RoAdmin.Size = UDim2.new(0.219999984, 0, 0.149999991, 0)
+	RoAdmin.ZIndex = 3
+	RoAdmin.Image = "rbxassetid://1496271525"
+	RoAdmin.ImageColor3 = Color3.fromRGB(176, 0, 0)
+	RoAdmin.MouseEnter:Connect(function()
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.Tooltip.Text = "Painting Editor"
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.Tooltip.Shadow.Text = "Painting Editor"
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.MetaFrame.Apps1.RoAdmin.ImageColor3 = Color3.fromRGB(141, 6, 6)
+	end)
+	RoAdmin.MouseLeave:Connect(function()
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.Tooltip.Text = ""
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.Tooltip.Shadow.Text = ""
+		game:GetService("Players").LocalPlayer.PlayerGui.HUD.Phone.Screen.MetaFrame.Apps1.RoAdmin.ImageColor3 = Color3.fromRGB(176, 0, 0)
+	end)
+	RoAdmin.MouseButton1Click:Connect(function()
+		local UI = ToyShop
+		if UI.Enabled == true then
+			UI.Enabled = false
+		else
+			UI.Enabled = true
+		end
+	end)
+	Icon.Name = "Icon"
+	Icon.Parent = RoAdmin
+	Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Icon.BackgroundTransparency = 1.000
+	Icon.Position = UDim2.new(0.00381009886, 0, 0, 0)
+	Icon.Size = UDim2.new(0.996189892, 0, 0.999999881, 0)
+	Icon.ZIndex = 3
+	Icon.Image = "http://www.roblox.com/asset/?id=5613214884"
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.21, Color3.fromRGB(226, 226, 226)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(226, 226, 226)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(195, 195, 195)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(182, 182, 182))}
+	UIGradient.Rotation = 90
+	UIGradient.Parent = RoAdmin
+
+	Shadow.Name = "Shadow"
+	Shadow.Parent = RoAdmin
+	Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Shadow.BackgroundTransparency = 1.000
+	Shadow.Position = UDim2.new(0.003106941, 0, 0.0178253129, 0)
+	Shadow.Size = UDim2.new(1, 0, 1, 0)
+	Shadow.ZIndex = 2
+	Shadow.Image = "rbxassetid://1496271525"
+	Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	Shadow.ImageTransparency = 0.50
+	wait(6)
+	local FL = require(game.ReplicatedStorage.FunctionLibrary)
+	FL.Feedback("Client-Sided Painting Editor", "Error")
+
+	local UIS = game:GetService("UserInputService")
+
+	local Players = game:GetService("Players")
+	local Player = Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+
+	Mouse.Button1Down:Connect(function()
+		if Mouse.Target then
+			if Mouse.Target.Parent:FindFirstChild("Canvas") then
+				addcanvaseditoroption(Mouse.Target)
+			end
+		end
+	end)
+end
+
+
+
